@@ -1,0 +1,351 @@
+---
+layout: null
+permalink: /ai-voice-marketing-case-study/sales-development-ai-secrets/
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Voice Marketing | Secrets of BLAND AI </title>
+    <meta name="description" content="Leveraging AI voice agents as sales development representatives. The research is clear: You need a lot more than just 'a human sounding voice'.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/seanivore/voice-mkt-sfa/refs/heads/voice-mkt-sfa/assets/images/thumbnail-presentation-1.webp">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon/favicon.svg">
+    <link rel="shortcut icon" href="../assets/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="AUGUST">
+    <link rel="manifest" href="../assets/favicon/site.webmanifest">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/pixel-animation.css">
+    <link rel="stylesheet" href="https://use.typekit.net/yrt0pwo.css">
+
+    <!-- JavaScript -->
+    <script src="../assets/js/slideshow.js"></script>
+    <script src="../assets/js/pixel-animation.js"></script>
+
+    <!-- Component Templates -->
+    <template id="nav-sidebar-template">
+        <div class="nav-sidebar">
+            <h3 class="nav-title"></h3>
+            <div class="nav-links"></div>
+        </div>
+    </template>
+
+    <template id="footer-template">
+        <div class="footer-copyright">
+            <p>Sean August Horvath © <span class="year">2025</span></p>
+        </div>
+    </template>
+
+    <script>
+        // Wait for DOM to be ready
+        document.addEventListener('DOMContentLoaded', () => {
+            // Setup nav-sidebar
+            class NavSidebar extends HTMLElement {
+                constructor() {
+                    super();
+                    const template = document.getElementById('nav-sidebar-template');
+                    const content = template.content.cloneNode(true);
+                    const title = this.getAttribute('title') || 'Slides';
+                    const links = JSON.parse(this.getAttribute('links') || '[]');
+
+                    content.querySelector('.nav-title').textContent = title;
+
+                    const navLinks = content.querySelector('.nav-links');
+                    links.forEach(link => {
+                        const a = document.createElement('a');
+                        a.href = link.href;
+                        a.className = 'nav-link';
+                        a.textContent = link.text;
+                        navLinks.appendChild(a);
+                    });
+
+                    this.appendChild(content);
+                }
+
+                connectedCallback() {
+                    const updateActiveLink = () => {
+                        const hash = window.location.hash || '#slide1';
+                        this.querySelectorAll('.nav-link').forEach(link => {
+                            if (link.getAttribute('href') === hash) {
+                                link.classList.add('active');
+                            } else {
+                                link.classList.remove('active');
+                            }
+                        });
+                    };
+
+                    window.addEventListener('hashchange', updateActiveLink);
+                    updateActiveLink();
+                }
+            }
+            customElements.define('nav-sidebar', NavSidebar);
+
+            // Setup footer
+            class Footer extends HTMLElement {
+                constructor() {
+                    super();
+                    const template = document.getElementById('footer-template');
+                    const content = template.content.cloneNode(true);
+                    const year = this.getAttribute('year') || new Date().getFullYear();
+                    content.querySelector('.year').textContent = year;
+                    this.appendChild(content);
+                }
+            }
+            customElements.define('site-footer', Footer);
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Brand logo that stays fixed -->
+    <div class="brand-logo-sticky">
+        <img class="invert-color" src="../assets/images/brand-text-art-1.svg" alt="Brand Logo">
+    </div>
+
+    <!-- Single nav-sidebar that stays fixed -->
+    <nav-sidebar title="Slides" links='[
+        {"href": "#slide1", "text": "Effective AI SDR"},
+        {"href": "#slide2", "text": "21% Trust Increase"},
+        {"href": "#slide3", "text": "Sound Human?"},
+        {"href": "#slide4", "text": "Hey, BLAND AI"},
+        {"href": "#slide5", "text": "Creative Needs"},
+        {"href": "#slide6", "text": "Claude Army"},
+        {"href": "#slide7", "text": "Voice Control"},
+        {"href": "#slide8", "text": "Script Generation"}
+    ]'></nav-sidebar>
+
+    <!-- Main scrollable container -->
+    <div class="scrollable-container" id="slides">
+        <!-- Slide 1 -->
+        <div class="slide" id="slide1">
+            <div class="slide-content">
+                <h1 class="h1">Uncovering the Secrets Behind Effective AI SDRs</h1>
+                <h2 class="h2">How do Sales Development Representatives snag leads?</h2>
+                <p class="p">
+                    AI voice marketing performance data for Home Services is plentiful with impressive conversion
+                    rates.
+                </p>
+                <ul class="list-item">
+                    <li> 27% increase in up-sales by matching natural instructional speech pacing</li>
+                    <li>Pause for half a second before explaining benefits and they are 12% better at recalling the
+                        information</li>
+                    <li>Use a downward inflection with technical terms and people are 15% more likely to perceive you as
+                        technically competent</li>
+                    <li>21% increase in perception of trust by resonating pitch in chest at 130-140Hz</li>
+                </ul>
+                <p class="p">Let's make that tangible!</p>
+                <p class="accent-1">Turn your audio up for the next slide!</p>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide" id="slide2">
+            <div class="slide-content">
+                <h1 class="h1">Hear The Trust</h1>
+                <h2 class="h2 h2-margin-extra">Let's give you a taste of one of those strategies.</h2>
+                <p class="p">An example of how to sound trustworthy.</p>
+                <p class="accent-1">Hit play when you're ready.</p>
+                <!-- Simple HTML5 audio player replacing YouTube -->
+                <div style="width: 100%; margin: 2rem 0;">
+                    <audio controls style="width: 100%; max-width: 500px;" id="trustAudio">
+                        <source src="../assets/audio/130-hz-trust-frequency-ai-voice-mkt.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <p class="p audio-reaction">DID YOU LOVE IT?! 🙃 Helpful, right? *SIGH*</p>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide" id="slide3">
+            <div class="slide-content">
+                <h1 class="h1">Doesn't it sound human?!</h1>
+                <h2 class="h2 h2-margin-small">We're being facetious, but it is to make a point:</h2>
+                <h2 class="h2 h2-margin-extra">How far does "AI voices that sound human" get you?</h2>
+                <p class="p">
+                    BLAND AI's very detailed March 2025 blog titled "Key Features of BLAND AI for AI SDRs" had this to
+                    say on the point. </p>
+                <blockquote class="blockquote">
+                    "Voice Customization: Bland offers extensive voice customization options, allowing businesses to
+                    select from a library of lifelike voices or even create custom voice clones to maintain brand
+                    consistency. Furthermore, the platform supports the creation of voices in virtually any language,
+                    empowering AI SDRs to communicate with prospects in their preferred language, enhancing engagement
+                    and potentially opening doors to new global markets."
+                </blockquote>
+                <p class="accent-1">You thinking what we're thinking?</p>
+            </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slide" id="slide4">
+            <div class="slide-content">
+                <h1 class="h1">Help Me Out Here, BLAND AI</h1>
+                <h2 class="h2 h2-margin-small">Show us the creative process needed to implement this crazy research.
+                </h2>
+                <!-- Pixel animation container replacing the placeholder -->
+                <div id="pixel-animation" style="width: 100%; margin: 2rem 0; border-radius: 8px; overflow: hidden;">
+                </div>
+                <p class="p">
+                    Next we checked a 'HOW IT WORKS' landing page and, you can listen to the voices, but... not helpful.
+                    I was left fixated on the logical implications of spending tens of thousands on this stunning
+                    website.
+                </p>
+                <ul class="list-item">
+                    <li>The research was clear, detailing exact needs for success</li>
+                    <li>Ideally product UI design would be centered around this need</li>
+                    <li>This need goes beyond "Human sounding" AI voice</li>
+                    <li>Achieving this is not the selling point of the website</li>
+                </ul>
+                <p class="p">
+                    Meaning, if I'm not their target audience, who is?
+                </p>
+                <p class="accent-1">
+                    Time to confirm my suspicions.
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="slide" id="slide5">
+            <div class="slide-content">
+                <h1 class="h1">Strategy Implementation Needs Buried</h1>
+                <h2 class="h2">BLAND AI's intentions seemed too obvious. So we consulted our most trusted research
+                    advisor: Perplexity.</h2>
+                <blockquote class="blockquote">
+                    "Yes, Bland AI offers consulting services, specifically for businesses interested in implementing
+                    their AI phone agent solutions. They provide consultations to help businesses build solutions. They
+                    provide implementation and "solutions engineering services" for a fee."
+                </blockquote>
+                <p class="p">
+                    Hear that? Product designer's screams echoing through time.</p>
+                <blockquote class="blockquote">
+                    "Noooo... UI/UX fail. The whole product should be built around voice manipulation!"
+                </blockquote>
+                <p class="p">The tool isn't the product. Ugh, tutorials written by salespeople 🙃 No bueno.</p>
+                <p class="p accent-1">
+                    CALL IN OUR ARMY.
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="slide" id="slide6">
+            <div class="slide-content">
+                <h1 class="h1">Clusters of Claudes Channeling Clever Clarity</h1>
+                <p class="h2">
+                    After some rearmament, they were ready to go.
+                </p>
+                <ul class="list-item">
+                    <li>We sent out many little Claude's armed with little tools.</li>
+                    <li>Filled their heads with little tasks and offered little guidance.</li>
+                    <li>Their research? A quantity I found a little overwhelming.</li>
+                </ul>
+                <p class="p">
+                    They continued. I was focused on how to write strategy-specific scripts.
+                </p>
+                <ul class="list-item">
+                    <li>Some Claude's synthesized while other Claude's critiqued.</li>
+                    <li>Some role played as Hollywood Movie Stars improving character scripts.</li>
+                </ul>
+                <p class="p">
+                    They developed an actionable framework.
+                </p>
+                <ul class="list-item">
+                    <li>Technical research was humanized into written scripts.</li>
+                    <li>They used archetypes that played into strategies identified in the research.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 7 -->
+        <div class="slide" id="slide7">
+            <div class="slide-content">
+                <h1 class="h1">Modulating the "Human-sounding" Voice of BLAND AI</h1>
+                <p class="h2">
+                    They delivered, illustrating implementation of the research and the scripts that resulted.
+                </p>
+                <ul class="list-item">
+                    <li>Rules for writing plain text scripts with notation</li>
+                    <li>Writing techniques specific to BLAND AI voice agents</li>
+                    <li>Indicating to AI HOW and WHEN to manipulate their human-sounding voice</li>
+                </ul>
+                <p class="p">
+                    My final request: At-a-glance understanding how to implement all the research-backed voice
+                    modulation.
+                </p>
+                <ul class="list-item">
+                    <li>A cheat sheet on writing scripts that result in controlled vocal changes</li>
+                    <li>How to adjust pitch, inflection, tone, pace, pause, emphasis and more</li>
+                    <li>Cover all needs to be able to implement research-backed voice modulation</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 8 -->
+        <div class="slide" id="slide8">
+            <div class="slide-content">
+                <h1 class="h1">Script Draft Generation Based On Needs</h1>
+                <h2 class="h2">Understand these tools and build you audience lists accordingly.</h2>
+                <p class="p">Two index types. Match strategies to your leads or find the right approach for your leads.
+                </p>
+                <ol class="list-item">
+                    <li>I have X type of lead. Which strategy should I use?</li>
+                    <li>I'm working with Y strategies, what leads are they best for?</li>
+                </ol>
+                <p class="p">An index, and each of these, and AI will generate stellar scripts for whatever your needs.
+                    Then ask them to drill down into specifics, e.g. timely information about inflation or weather
+                    events.</p>
+                <ul class="list-item">
+                    <li>Emotion-Driven Copywriting Guide</li>
+                    <li>Script Writing Cheat Sheet</li>
+                </ul>
+                <p class="accent-1">
+                    Research-backed, targeted, script ideation is now in your hands.</p>
+            </div>
+        </div>
+
+        <!-- More slides to be added -->
+    </div>
+
+    <!-- Navigation arrows -->
+    <div class="nav-arrows" id="navArrows">
+        <button class="arrow" id="prevSlide" aria-label="Previous slide">&#10094;</button>
+        <button class="arrow" id="nextSlide" aria-label="Next slide">&#10095;</button>
+    </div>
+    <div class="keyboard-hint">
+        <p>SWIPE OR USE KEYBOARD ARROWS</p>
+    </div>
+
+    <!-- Mobile navigation -->
+    <div class="mobile-nav-toggle" id="mobileNavToggle"></div>
+    <div class="mobile-nav" id="mobileNav">
+        <nav-sidebar title="Navigation" links='[
+            {"href": "#slide1", "text": "Effective AI SDR"},
+            {"href": "#slide2", "text": "21% Trust Increase"},
+            {"href": "#slide3", "text": "Sound Human?"},
+            {"href": "#slide4", "text": "Hey, BLAND AI"},
+            {"href": "#slide5", "text": "Creative Needs"},
+            {"href": "#slide6", "text": "Claude Army"},
+            {"href": "#slide7", "text": "Voice Control"},
+            {"href": "#slide8", "text": "Script Generation"}
+        ]'></nav-sidebar>
+        <nav-sidebar title="Resources" links='[
+            {"href": "#", "text": "Voice Cheat Sheet"},
+            {"href": "#", "text": "Implementation Guide"},
+            {"href": "#", "text": "Strategy Index"},
+            {"href": "#", "text": "Script Templates"}
+        ]'></nav-sidebar>
+    </div>
+
+    <!-- Footer -->
+    <site-footer year="2025"></site-footer>
+</body>
+
+</html>

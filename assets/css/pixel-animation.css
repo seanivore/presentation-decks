@@ -1,0 +1,53 @@
+/* Pixel Animation for BLAND-inspired logo effect */
+.pixel-container {
+    display: grid;
+    grid-template-columns: repeat(100, 1fr);
+    grid-template-rows: repeat(50, 1fr);
+    width: 100%;
+    min-height: 3rem;
+    aspect-ratio: 2/1;
+    margin: 0 auto;
+}
+
+.pixel {
+    width: 100%;
+    aspect-ratio: 1;
+    transition: background-color 0.5s ease;
+}
+
+/* Color palette */
+.red {
+    background-color: #FF0000;
+}
+
+.orange {
+    background-color: #FF7F00;
+}
+
+.yellow {
+    background-color: #fdef32;
+}
+
+.green {
+    background-color: #00FF00;
+}
+
+.blue {
+    background-color: #0000FF;
+}
+
+.indigo {
+    background-color: #2E0854;
+}
+
+.violet {
+    background-color: #8B00FF;
+}
+
+.pink {
+    background-color: #FF69B4;
+}
+
+.white {
+    background-color: #FFFFFF;
+}

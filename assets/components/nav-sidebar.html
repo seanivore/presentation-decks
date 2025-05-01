@@ -1,0 +1,66 @@
+<!-- Navigation sidebar template -->
+<template id="nav-sidebar-template">
+    <div class="nav-sidebar">
+        <h3 class="nav-title"></h3>
+        <div class="nav-links"></div>
+    </div>
+</template>
+
+<script>
+    class NavSidebar extends HTMLElement {
+        constructor() {
+            super();
+
+            // Get template content
+            const template = document.getElementById('nav-sidebar-template');
+            const content = template.content.cloneNode(true);
+
+            // Get attributes
+            const title = this.getAttribute('title') || 'Slides';
+            const links = JSON.parse(this.getAttribute('links') || '[]');
+
+            // Set title
+            content.querySelector('.nav-title').textContent = title;
+
+            // Create links
+            const navLinks = content.querySelector('.nav-links');
+            links.forEach(link => {
+                const a = document.createElement('a');
+                a.href = link.href;
+                a.className = 'nav-link';
+                a.textContent = link.text;
+                // Add click handler for active state
+                a.addEventListener('click', (e) => {
+                    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                    a.classList.add('active');
+                });
+                navLinks.appendChild(a);
+            });
+
+            // Append to DOM
+            this.appendChild(content);
+        }
+
+        // Handle active state updates
+        connectedCallback() {
+            const updateActiveLink = () => {
+                const hash = window.location.hash || '#slide1';
+                this.querySelectorAll('.nav-link').forEach(link => {
+                    if (link.getAttribute('href') === hash) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            };
+
+            // Update active link on hash change
+            window.addEventListener('hashchange', updateActiveLink);
+            // Initial update
+            updateActiveLink();
+        }
+    }
+
+    // Register the custom element
+    customElements.define('nav-sidebar', NavSidebar);
+</script>

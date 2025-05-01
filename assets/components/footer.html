@@ -1,0 +1,28 @@
+<!-- Footer template -->
+<template id="footer-template">
+    <div class="footer-copyright">
+        <p>Sean August Horvath © <span class="year">2025</span></p>
+    </div>
+</template>
+
+<script>
+    class Footer extends HTMLElement {
+        constructor() {
+            super();
+
+            // Get template content
+            const template = document.getElementById('footer-template');
+            const content = template.content.cloneNode(true);
+
+            // Set year dynamically if not provided
+            const year = this.getAttribute('year') || new Date().getFullYear();
+            content.querySelector('.year').textContent = year;
+
+            // Append to DOM (not using shadow DOM anymore)
+            this.appendChild(content);
+        }
+    }
+
+    // Register the custom element
+    customElements.define('site-footer', Footer);
+</script>
