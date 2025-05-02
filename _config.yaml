@@ -1,5 +1,9 @@
-permalink: pretty
+permalink: /:basename/
 title: Agentic Research & Implementation AI Voice Marketing
 description: Comprehensive research, strategies, and implementation guides all agentically created by Single-File-Agents.
 baseurl: ""
-url: "https://presenting.august.style"
+url: "https://presenting.august.style/"
+collections:
+  pages:
+    output: true
+    permalink: /:basename/
