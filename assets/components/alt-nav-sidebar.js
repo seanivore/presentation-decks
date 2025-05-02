@@ -1,49 +1,62 @@
 class AltNavSidebar extends HTMLElement {
     constructor() {
         super();
-        // Store attributes but don't manipulate DOM yet
-        this.navTitle = this.getAttribute('title') || 'BLAND AI Research';
+    }
+
+    connectedCallback() {
+        console.log('AltNavSidebar connected');
         
-        // Parse links from attribute or use default if not provided
+        // Get attributes
+        const title = this.getAttribute('title') || 'BLAND AI Research';
+        const linksAttr = this.getAttribute('links');
+        
+        // Parse links
+        let links = [];
         try {
-            this.navLinks = JSON.parse(this.getAttribute('links') || '[]');
+            links = JSON.parse(linksAttr || '[]');
+            console.log('Successfully parsed links:', links);
         } catch (e) {
-            console.error('Failed to parse links attribute:', e);
-            this.navLinks = [
+            console.error('Failed to parse links JSON:', e);
+            console.log('Raw links attribute:', linksAttr);
+            links = [
                 { "href": "#slide1", "text": "Introduction" },
                 { "href": "#slide2", "text": "Challenges" },
                 { "href": "#slide3", "text": "Solutions" }
             ];
         }
-    }
-
-    // Move DOM operations to connectedCallback
-    connectedCallback() {
-        // Create HTML
-        const html = `
-            <div class="nav-sidebar">
-                <h3></h3>
-                <div class="nav-links"></div>
-            </div>
-        `;
-
-        // Set inner HTML
-        this.innerHTML = html;
         
-        // Set content
-        this.querySelector('h3').textContent = this.navTitle;
-
-        // Create links
-        const navLinks = this.querySelector('.nav-links');
-        this.navLinks.forEach(link => {
+        // Create main container
+        const container = document.createElement('div');
+        container.className = 'nav-sidebar';
+        
+        // Create title
+        const titleEl = document.createElement('h3');
+        titleEl.textContent = title;
+        container.appendChild(titleEl);
+        
+        // Create links container
+        const linksContainer = document.createElement('div');
+        linksContainer.className = 'nav-links';
+        
+        // Add links
+        links.forEach(link => {
             const a = document.createElement('a');
             a.href = link.href;
             a.className = 'nav-link';
             a.textContent = link.text;
-            navLinks.appendChild(a);
+            linksContainer.appendChild(a);
+            console.log('Added link:', a);
         });
-
-        // Update active link on hash change
+        
+        container.appendChild(linksContainer);
+        
+        // Clear and append
+        while (this.firstChild) {
+            this.removeChild(this.firstChild);
+        }
+        this.appendChild(container);
+        
+        // Set up active link handling
         this.updateActiveLink = () => {
             const hash = window.location.hash || '#slide1';
             this.querySelectorAll('.nav-link').forEach(link => {
@@ -54,19 +67,16 @@ class AltNavSidebar extends HTMLElement {
                 }
             });
         };
-
-        // Add event listener
-        window.addEventListener('hashchange', this.updateActiveLink);
         
-        // Initial update
+        window.addEventListener('hashchange', this.updateActiveLink);
         this.updateActiveLink();
+        
+        console.log('AltNavSidebar initialization complete:', this.innerHTML);
     }
 
     disconnectedCallback() {
-        // Clean up event listeners when element is removed
         window.removeEventListener('hashchange', this.updateActiveLink);
     }
 }
 
-// Register the custom element
 customElements.define('alt-nav-sidebar', AltNavSidebar); 

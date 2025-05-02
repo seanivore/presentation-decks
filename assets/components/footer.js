@@ -1,23 +1,29 @@
 class Footer extends HTMLElement {
     constructor() {
         super();
-        // Store the year attribute
-        this.footerYear = this.getAttribute('year') || new Date().getFullYear();
     }
 
     connectedCallback() {
-        // Create template HTML
-        const html = `
-            <div class="footer-copyright">
-                <p>Sean August Horvath © <span class="year">2025</span></p>
-            </div>
-        `;
-
-        // Create element
-        this.innerHTML = html;
+        // Get attributes
+        const year = this.getAttribute('year') || new Date().getFullYear();
         
-        // Set content
-        this.querySelector('.year').textContent = this.footerYear;
+        // Create main container
+        const container = document.createElement('div');
+        container.className = 'footer-copyright';
+        
+        // Create content
+        const p = document.createElement('p');
+        p.textContent = 'Sean August Horvath © ';
+        
+        const yearSpan = document.createElement('span');
+        yearSpan.className = 'year';
+        yearSpan.textContent = year;
+        
+        p.appendChild(yearSpan);
+        container.appendChild(p);
+        
+        // Append to component
+        this.appendChild(container);
     }
 }
 
