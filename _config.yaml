@@ -1,48 +1,5 @@
 permalink: pretty
-title: Agentic Workflow Case Studies
-description: Comprehensive research, strategies, and implementation guides. Wait until you see that marketing plan they wrote.
+title: Agentic Research & Implementation AI Voice Marketing
+description: Comprehensive research, strategies, and implementation guides all agentically created by Single-File-Agents.
 baseurl: ""
-url: "https://sfagent.august.style"
-
-# Build settings
-markdown: kramdown
-plugins:
-  - jekyll-relative-links
-  - jekyll-feed
-  - jekyll-seo-tag
-
-# Collections
-collections:
-  posts:
-    output: true
-
-# Default front matter
-defaults:
-  -
-    scope:
-      path: ""
-    values:
-      layout: "default"
-  -
-    scope:
-      path: "index.html"
-    values:
-      permalink: /
-  -
-    scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "page"
-
-# Exclude files from being included in the build
-exclude:
-  - .gitignore
-  - .vscode/
-  - .cursor/
-  - .DS_Store
-  - README.md
-  - LICENSE
-
-relative_links:
-  enabled: true
+url: "https://presenting.august.style"

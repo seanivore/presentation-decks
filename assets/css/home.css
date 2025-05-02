@@ -402,8 +402,8 @@ nav a:hover {
 }
 
 .presentation-dark {
-    background-image: linear-gradient(to right, #1ab7f515 1px, transparent 1px), 
-                     linear-gradient(to bottom, #1ab7f515 1px, transparent 1px);
+    background-image: linear-gradient(to right, #1ab7f515 1px, transparent 1px),
+        linear-gradient(to bottom, #1ab7f515 1px, transparent 1px);
     background-size: 24px 24px;
     background-color: #232323;
 }
@@ -565,32 +565,36 @@ footer {
 
 /* Responsive */
 @media (max-width: 1200px) {
-    .resources-grid, .sfa-grid {
+
+    .resources-grid,
+    .sfa-grid {
         grid-template-columns: repeat(3, minmax(260px, 300px));
     }
-    
+
     .case-studies-grid {
         grid-template-columns: repeat(2, minmax(260px, 450px));
     }
 }
 
 @media (max-width: 880px) {
-    .resources-grid, .sfa-grid {
+
+    .resources-grid,
+    .sfa-grid {
         grid-template-columns: minmax(280px, 500px);
     }
-    
+
     .case-studies-grid {
         grid-template-columns: minmax(280px, 500px);
     }
-    
+
     .presentation-card {
         grid-column: auto;
     }
-    
+
     .hero h1 {
         font-size: 3.5rem;
     }
-    
+
     .showcase-grid {
         grid-template-columns: 1fr;
     }
@@ -601,26 +605,26 @@ footer {
         flex-direction: column;
         text-align: center;
     }
-    
+
     nav ul {
         margin-top: 20px;
         flex-wrap: wrap;
         justify-content: center;
     }
-    
+
     nav li {
         margin: 10px;
     }
-    
+
     .hero h1 {
         font-size: 2.8rem;
     }
-    
+
     .hero p {
         font-size: 1.2rem;
     }
-    
+
     .section-heading {
         font-size: 2rem;
     }
-} 
+}
