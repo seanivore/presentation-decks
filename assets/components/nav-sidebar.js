@@ -2,40 +2,33 @@ class NavSidebar extends HTMLElement {
     constructor() {
         super();
 
-        // Create template content
-        const template = document.createElement('template');
-        template.innerHTML = `
+        // Create template HTML
+        const html = `
             <div class="nav-sidebar">
                 <h3 class="nav-title"></h3>
                 <div class="nav-links"></div>
             </div>
         `;
 
+        // Create element
+        this.innerHTML = html;
+
         // Get attributes
         const title = this.getAttribute('title') || 'Slides';
         const links = JSON.parse(this.getAttribute('links') || '[]');
 
-        // Clone template and set content
-        const content = template.content.cloneNode(true);
-        content.querySelector('.nav-title').textContent = title;
+        // Set content
+        this.querySelector('.nav-title').textContent = title;
 
         // Create links
-        const navLinks = content.querySelector('.nav-links');
+        const navLinks = this.querySelector('.nav-links');
         links.forEach(link => {
             const a = document.createElement('a');
             a.href = link.href;
             a.className = 'nav-link';
             a.textContent = link.text;
-            // Add click handler for active state
-            a.addEventListener('click', (e) => {
-                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-                a.classList.add('active');
-            });
             navLinks.appendChild(a);
         });
-
-        // Append to DOM
-        this.appendChild(content);
     }
 
     // Handle active state updates

@@ -2,14 +2,16 @@ class AltNavSidebar extends HTMLElement {
     constructor() {
         super();
 
-        // Create template content
-        const template = document.createElement('template');
-        template.innerHTML = `
+        // Create template HTML
+        const html = `
             <div class="nav-sidebar">
                 <h3></h3>
                 <div class="nav-links"></div>
             </div>
         `;
+
+        // Create element
+        this.innerHTML = html;
 
         // Get attributes
         const title = this.getAttribute('title') || 'BLAND AI Research';
@@ -27,12 +29,11 @@ class AltNavSidebar extends HTMLElement {
             ];
         }
 
-        // Clone template and set content
-        const content = template.content.cloneNode(true);
-        content.querySelector('h3').textContent = title;
+        // Set content
+        this.querySelector('h3').textContent = title;
 
         // Create links
-        const navLinks = content.querySelector('.nav-links');
+        const navLinks = this.querySelector('.nav-links');
         links.forEach(link => {
             const a = document.createElement('a');
             a.href = link.href;
@@ -40,9 +41,6 @@ class AltNavSidebar extends HTMLElement {
             a.textContent = link.text;
             navLinks.appendChild(a);
         });
-
-        // Append to DOM
-        this.appendChild(content);
     }
 
     // Handle active state updates
