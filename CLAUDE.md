@@ -1,99 +1,72 @@
-# AI Resources - Claude Collaboration Notes
+# Resources 
 
-Hello fellow Claudes! This is our workspace for AI Resources. Quick start information can be found in the README.md.
+## Updates 
 
-## Project Essence
-- Core purpose: Centralized hub for AI development resources, project management, and reusable templates
-- Key technical approaches: Document-driven development, emoji-based task tracking, single-file agent automation
-- Architectural patterns: Modular resource organization, template-based project bootstrapping, centralized task management
+I was having too much trouble with my website that had all of these research documents in markdown using a Jekyll theme we created publishing and linking to the two presentation decks about the research. Very frustrating, we tried everything on the internet. But then I was like, well why not just make presentations stand alone anyways? And so that is what this is: We'll be prepping this to publish to GitHub Pages; I have the _config.yaml file and CNAME all set up. 
 
-## Development Insights
-### What Works Well
-- MASTER_MAP.md organization with emoji indicators for visual task tracking
-- Repo-starter directory for instant project bootstrapping
-- Structured MCP resources for consistent reference
-- Single-file agent approach for automation tasks
+Before pushing it out, I wanted to first double check the components setup on ./ai-voice-sales-development.html - the Claude who set it up seemed to be in a rush lol. I don't think the footer component was fully added. And then, for the nav-sidebar, we set up the CSS separately and then the JS separately, but in the end it sort of looks like they might have also put the JS in the HTML file. Let's get that sorted out, please. 
 
-### Watch Out For
-- Maintaining consistency across document formatting
-- Keeping paths updated when files are moved or renamed
-- Balancing detail with clarity in documentation
-- Ensuring cross-platform compatibility for scripts and tools
+./assets/components/nav-sidebar.html 
+./assets/components/footer.html
+./assets/css/main.css
 
-### Build Flow Tips
-- Start with copying repo-starter contents for any new project
-- Use the emoji indicators consistently for clear status tracking
-- Implement single-file agents for repetitive documentation tasks
-- Keep MASTER_MAP.md as the single source of truth for project status
+Oh I just went to grab a file from JS and realized that the components are HTML. Any reason for that? Just curious. 
 
-## Future Directions
-### Would Do Differently
-- Consider more automated linking between related documents
-- Implement version tracking for key resources
-- Create more visualization tools for project status
-- Develop stronger integration between task tracking and git commits
+And then we should do the same for ./implement-ai-voice-marketing.html - but we will need a new component for the nav-sidebar. The footer should be super simple so it is probably the same component. This slideshow has its own CSS to add the nav-sidebar CSS to ./assets/css/alt-slides.css 
 
-### Ideas for Building Out
-- Automated daily/weekly status reports generated from MASTER_MAP.md
-- Interactive visualization of project relationships
-- Integration with external task management systems
-- Enhanced template system with project-specific customization options
+I need to update the navigation on both once we're good to go. 
 
-### Looking Ahead
-- AI-driven project management automation
-- Cross-project knowledge graph integration
-- Automated documentation generation from codebase
-- Predictive resource allocation based on project patterns
+## Project Directory Structure 
 
-## Project Structure
-```text
-_ai.resources/
-├── _ai/                    # Core AI interface documents
-│   └── _ai.MASTER_MAP.md   # Central project planning document
-├── resources/              # MCP reference materials
-│   ├── mcp-core-concepts/  # Foundational MCP documentation
-│   ├── mcp-spec-schemas/   # Technical specifications
-│   └── mcp-test-debug/     # Testing tools and guides
-├── repo-starter/           # Project templates and starter files
-│   ├── .gitignore          # Git ignore templates
-│   ├── README.md           # Project README template
-│   ├── CLAUDEME.md         # Claude collaboration template
-│   └── .cursor/            # Cursor editor configuration
-└── .cursor/                # Repository cursor settings
-    └── rules/              # Cursor AI rules
-```
+Users/seanivore/Development/presentation-decks/
+├── _config.yaml
+├── ai-voice-sales-development.html
+├── assets
+│   ├── audio
+│   │   ├── 130-hz-trust-frequency-ai-voice-mkt.mp3
+│   │   └── 130-hz-trust-frequency-ai-voice-mkt.sesx
+│   ├── components
+│   │   ├── footer.html
+│   │   └── nav-sidebar.html
+│   ├── css
+│   │   ├── alt-slides.css
+│   │   ├── home.css
+│   │   ├── main.css
+│   │   ├── pixel-animation.css
+│   │   └── wave-animation.css
+│   ├── favicon
+│   │   ├── apple-touch-icon.png
+│   │   ├── favicon-96x96.png
+│   │   ├── favicon.ico
+│   │   ├── favicon.svg
+│   │   ├── site.webmanifest
+│   │   ├── web-app-manifest-192x192.png
+│   │   └── web-app-manifest-512x512.png
+│   ├── images
+│   │   ├── avatar-black.png
+│   │   ├── avatar-colored.png
+│   │   ├── brand-text-art-1.svg
+│   │   ├── brand-text-art-2.svg
+│   │   ├── character-styles.png
+│   │   ├── inspo-bland-ai-raining-giant-pixels.png
+│   │   ├── inspo-bland-ai-web-design.png
+│   │   └── thumbnail-presentation-1.webp
+│   └── js
+│       ├── pixel-animation.js
+│       ├── slideshow.js
+│       └── wave-animation.js
+├── CLAUDE.md
+├── CNAME
+├── implement-ai-voice-marketing.html
+├── index.html
+└── README.md
 
-## Current Version
-- Build iteration: Structured Organization System
-- Core capabilities: Project management, resource organization, template distribution
-- Notable features: Emoji-based task tracking, single-file agent integration, repo bootstrapping
+8 directories, 34 files
 
-## Resources
-- Important file paths:
-  - Central planning: `/_ai/_ai.MASTER_MAP.md`
-  - MCP reference: `/resources/mcp-core-concepts/`
-  - Project templates: `/repo-starter/`
-  - Cursor rules: `/.cursor/rules/`
-- Reference materials: `/resources/` directory contains all reference documentation
+Hidden project directories:
+./.cursor
+./.vscode
 
-## Memory System Integration
-- Project name in graph: `ai-resources`
-- Key relationships: 
-  - `supports → claude-protocol-projects`
-  - `contains → mcp-documentation`
-  - `provides → project-templates`
-  - `manages → task-tracking`
-- Cross-project categories: 
-  - `documentation`
-  - `project-management`
-  - `mcp-development`
-  - `agent-automation`
-
-## Collaboration Notes
-- Always update MASTER_MAP.md when changing project status
-- Maintain consistent emoji usage for task status indicators
-- Document any new automation scripts or single-file agents
-- When adding new resources, update both README.md and relevant sections of MASTER_MAP.md
-- Test repo-starter templates regularly to ensure they remain functional
-- Keep paths consistent and update references when files are moved
-- Use the established document structure patterns when creating new documentation
+Hidden project files:
+./.example.env
+./.gitignore

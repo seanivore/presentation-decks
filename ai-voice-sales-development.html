@@ -26,77 +26,8 @@
     <script src="/assets/js/pixel-animation.js"></script>
 
     <!-- Component Templates -->
-    <template id="nav-sidebar-template">
-        <div class="nav-sidebar">
-            <h3 class="nav-title"></h3>
-            <div class="nav-links"></div>
-        </div>
-    </template>
-
-    <template id="footer-template">
-        <div class="footer-copyright">
-            <p>Sean August Horvath © <span class="year">2025</span></p>
-        </div>
-    </template>
-
-    <script>
-        // Wait for DOM to be ready
-        document.addEventListener('DOMContentLoaded', () => {
-            // Setup nav-sidebar
-            class NavSidebar extends HTMLElement {
-                constructor() {
-                    super();
-                    const template = document.getElementById('nav-sidebar-template');
-                    const content = template.content.cloneNode(true);
-                    const title = this.getAttribute('title') || 'Slides';
-                    const links = JSON.parse(this.getAttribute('links') || '[]');
-
-                    content.querySelector('.nav-title').textContent = title;
-
-                    const navLinks = content.querySelector('.nav-links');
-                    links.forEach(link => {
-                        const a = document.createElement('a');
-                        a.href = link.href;
-                        a.className = 'nav-link';
-                        a.textContent = link.text;
-                        navLinks.appendChild(a);
-                    });
-
-                    this.appendChild(content);
-                }
-
-                connectedCallback() {
-                    const updateActiveLink = () => {
-                        const hash = window.location.hash || '#slide1';
-                        this.querySelectorAll('.nav-link').forEach(link => {
-                            if (link.getAttribute('href') === hash) {
-                                link.classList.add('active');
-                            } else {
-                                link.classList.remove('active');
-                            }
-                        });
-                    };
-
-                    window.addEventListener('hashchange', updateActiveLink);
-                    updateActiveLink();
-                }
-            }
-            customElements.define('nav-sidebar', NavSidebar);
-
-            // Setup footer
-            class Footer extends HTMLElement {
-                constructor() {
-                    super();
-                    const template = document.getElementById('footer-template');
-                    const content = template.content.cloneNode(true);
-                    const year = this.getAttribute('year') || new Date().getFullYear();
-                    content.querySelector('.year').textContent = year;
-                    this.appendChild(content);
-                }
-            }
-            customElements.define('site-footer', Footer);
-        });
-    </script>
+    <script src="/assets/components/nav-sidebar.html"></script>
+    <script src="/assets/components/footer.html"></script>
 </head>
 
 <body>
