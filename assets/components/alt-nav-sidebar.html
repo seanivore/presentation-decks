@@ -11,9 +11,14 @@
         constructor() {
             super();
 
-            // Get template content
-            const template = document.getElementById('alt-nav-sidebar-template');
-            const content = template.content.cloneNode(true);
+            // Create template content
+            const template = document.createElement('template');
+            template.innerHTML = `
+                <div class="nav-sidebar">
+                    <h3></h3>
+                    <div class="nav-links"></div>
+                </div>
+            `;
 
             // Get attributes
             const title = this.getAttribute('title') || 'BLAND AI Research';
@@ -31,7 +36,8 @@
                 ];
             }
 
-            // Set title
+            // Clone template and set content
+            const content = template.content.cloneNode(true);
             content.querySelector('h3').textContent = title;
 
             // Create links

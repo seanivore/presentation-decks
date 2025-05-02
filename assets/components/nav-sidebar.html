@@ -11,15 +11,21 @@
         constructor() {
             super();
 
-            // Get template content
-            const template = document.getElementById('nav-sidebar-template');
-            const content = template.content.cloneNode(true);
+            // Create template content
+            const template = document.createElement('template');
+            template.innerHTML = `
+                <div class="nav-sidebar">
+                    <h3 class="nav-title"></h3>
+                    <div class="nav-links"></div>
+                </div>
+            `;
 
             // Get attributes
             const title = this.getAttribute('title') || 'Slides';
             const links = JSON.parse(this.getAttribute('links') || '[]');
 
-            // Set title
+            // Clone template and set content
+            const content = template.content.cloneNode(true);
             content.querySelector('.nav-title').textContent = title;
 
             // Create links
