@@ -179,7 +179,7 @@ body {
 /* Navigation sidebar */
 .nav-sidebar {
     position: fixed;
-    width: 200px;
+    width: 180px;
     height: fit-content;
     border-radius: 11px;
     filter: drop-shadow(0 0.25rem 0.75rem rgba(0, 0, 0, 0.426));
@@ -196,7 +196,7 @@ body {
     font-family: system-ui, sans-serif;
     text-shadow: -2px 0px 2px #0d0d0c66;
     margin: 1rem;
-    row-gap: 1rem;
+    row-gap: 0.8rem;
     z-index: 10;
     text-align: center;
 }
@@ -206,14 +206,14 @@ body {
     flex-direction: column;
     gap: 0.8rem;
     font-family: system-ui, sans-serif;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
+    font-size: 0.7rem;
+    margin-bottom: 0.75rem;
     font-weight: 500;
 }
 
 .nav-link {
     background: linear-gradient(190deg, #b167b2, #4b194b);
-    padding: 0.5rem;
+    padding: 0.33rem;
     border-left: 1px solid #e5ad4d52;
     border-top: 1px solid #e5ad4d52;
     border-right: 1px solid #e5ad4d52;

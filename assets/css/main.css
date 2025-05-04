@@ -186,6 +186,7 @@ body {
     margin: 1rem;
     row-gap: 0.8rem;
     z-index: 10;
+    text-align: center;
 }
 
 .nav-title {
