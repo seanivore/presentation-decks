@@ -41,18 +41,12 @@ class NavSidebar extends HTMLElement {
             a.className = 'nav-link';
             a.textContent = link.text;
             
-            // Add event handler to handle different link types properly
-            a.addEventListener('click', (event) => {
-                // Check if it's an external URL or a slide link
-                if (link.href.startsWith('#')) {
-                    // It's a slide link, let other handlers manage it
-                    // No need to prevent default
-                } else {
-                    // It's an external link, handle it directly
-                    event.preventDefault();
-                    window.open(link.href, '_blank');
-                }
-            });
+            // Handle external links differently - don't add custom click handlers
+            // Just set the target for external links to open in a new tab
+            if (!link.href.startsWith('#')) {
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+            }
             
             linksContainer.appendChild(a);
             console.log('Added link:', a);

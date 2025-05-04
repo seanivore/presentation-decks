@@ -1,0 +1,51 @@
+/* Mobile Navigation Fixes for both themes */
+
+/* General fixes for nav-sidebar within mobile nav */
+.mobile-nav .nav-sidebar {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+}
+
+/* Fix for link visibility */
+.mobile-nav .nav-links {
+    display: flex !important;
+    width: 100% !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.mobile-nav .nav-link {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* Override any translations or transforms */
+.mobile-nav.active .nav-sidebar,
+.mobile-nav.active .nav-links,
+.mobile-nav.active .nav-link {
+    transform: none !important;
+    transition: none !important;
+}
+
+/* Fix for mobile nav toggle */
+.mobile-nav-toggle {
+    z-index: 25 !important;
+    background-color: rgba(255, 253, 246, 0.9) !important;
+    color: #333 !important;
+}
+
+/* Fix for active state visibility */
+.mobile-nav.active {
+    display: flex !important;
+    background-color: rgba(50, 50, 50, 0.95) !important;
+    z-index: 20 !important;
+    padding-top: 60px !important;
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+}
