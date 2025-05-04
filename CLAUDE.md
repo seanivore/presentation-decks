@@ -2,6 +2,9 @@
 
 ## Updates 
 
+- Add some resource URLs into the presentations
+- Add more links to nav 
+- Fix mobile nav  
 
 
 ## Project Directory Structure 

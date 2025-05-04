@@ -44,6 +44,20 @@ class AltNavSidebar extends HTMLElement {
             a.href = link.href;
             a.className = 'nav-link';
             a.textContent = link.text;
+            
+            // Add event handler to handle different link types properly
+            a.addEventListener('click', (event) => {
+                // Check if it's an external URL or a slide link
+                if (link.href.startsWith('#')) {
+                    // It's a slide link, let other handlers manage it
+                    // No need to prevent default
+                } else {
+                    // It's an external link, handle it directly
+                    event.preventDefault();
+                    window.open(link.href, '_blank');
+                }
+            });
+            
             linksContainer.appendChild(a);
             console.log('Added link:', a);
         });
