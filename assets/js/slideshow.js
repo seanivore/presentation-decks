@@ -264,11 +264,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Add proper click handler that works across all slides
       newLink.addEventListener("click", (event) => {
+        const href = newLink.getAttribute("href");
+        
+        // Don't interfere with external links or index.html
+        if (!href || !href.startsWith("#")) {
+          // Let the default browser behavior handle these
+          return;
+        }
+        
+        // Only prevent default for internal slide links
         event.preventDefault();
 
         // Get target ID or assign one if it doesn't exist
-        let targetId = newLink.getAttribute("href");
-        if (!targetId || targetId === "#") {
+        let targetId = href;
+        if (targetId === "#") {
           // Just go to the slide this sidebar belongs to
           const parentSlide = newLink.closest(".slide");
           if (parentSlide) {

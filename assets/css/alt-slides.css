@@ -331,7 +331,7 @@ body {
     width: 40px;
     height: 40px;
     filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.3));
-    background-color: rgba(255, 253, 246, 0.7);
+    background-color: rgba(255, 253, 246, 0.8);
     backdrop-filter: blur(5px);
     border-radius: 50%;
     align-items: center;
@@ -339,18 +339,21 @@ body {
     font-size: 1.2rem;
     cursor: pointer;
     overflow: hidden;
+    border: 2px solid rgba(255, 253, 246, 0.3);
 }
 
 .mobile-nav-toggle::after {
-    content: "▲";
+    content: "☰";
     font-family: system-ui, sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     display: block;
     transition: transform 0.3s ease;
+    color: var(--accent-4);
 }
 
 .mobile-nav-toggle.active::after {
-    transform: rotate(180deg);
+    content: "×";
+    font-size: 2rem;
 }
 
 .mobile-nav {
@@ -361,20 +364,81 @@ body {
     border-radius: 11px;
     top: 0;
     right: 0;
-    width: 250px;
+    width: 280px;
     margin: 0.25rem;
     height: fit-content;
     filter: drop-shadow(2px 4px 6px black);
-    background-color: rgba(167, 167, 167, 0.4);
+    background-color: rgba(67, 67, 67, 0.85);
     backdrop-filter: blur(10px);
-    padding: 4rem 1.5rem 1rem 1.5rem;
+    padding: 4rem 1.5rem 1.5rem 1.5rem;
     z-index: 15;
     transform: translateX(100%);
     transition: transform 0.3s ease;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-left: 1px solid rgba(255, 253, 246, 0.2);
+    border-top: 1px solid rgba(255, 253, 246, 0.2);
 }
 
 .mobile-nav.active {
     transform: translateX(0);
+}
+
+.mobile-nav-content {
+    width: 100%;
+}
+
+.mobile-nav-title {
+    font-family: system-ui, sans-serif;
+    text-shadow: -2px 0px 2px #0d0d0c66;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+.mobile-nav .nav-link {
+    background: linear-gradient(190deg, #b167b2, #4b194b);
+    padding: 0.33rem;
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.2s ease;
+    font-family: system-ui, sans-serif;
+    display: block;
+    cursor: pointer;
+    border-left: 1px solid #e5ad4d52;
+    border-top: 1px solid #e5ad4d52;
+    border-right: 1px solid #e5ad4d52;
+    border-bottom: 1px solid #e5ad4d52;
+    filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.518));
+}
+
+.mobile-nav .nav-link:hover {
+    background: linear-gradient(180deg, #fdbf2f, #875f00);
+    border: 1px solid #fdd987;
+    transform: translateY(-1px);
+}
+
+.mobile-nav .nav-link:active {
+    background: linear-gradient(180deg, #875f00, #fdbf2f);
+    border: 1px solid #fdd987;
+    transform: translateY(-1px);
+}
+
+.mobile-nav .nav-link.active {
+    background: linear-gradient(180deg, #7de98d, #124e1b);
+    border: 1px solid #92e89f;
+    transform: translateY(-1px);
 }
 
 /* Media queries */
@@ -397,6 +461,11 @@ body {
     .mobile-nav-toggle,
     .mobile-nav {
         display: flex;
+    }
+
+    .mobile-nav.active {
+        display: flex;
+        transform: translateX(0);
     }
 
     /* Simplified approach to nullify the active styling on mobile */
