@@ -26,8 +26,8 @@
     <script src="./assets/js/slideshow.js"></script>
     <script src="./assets/js/pixel-animation.js"></script>
 
-    <!-- Component Templates -->
-    <script src="./assets/components/alt-nav-sidebar.js"></script>
+    <!-- Component Templates - REMOVED -->
+    <!-- <script src="./assets/components/alt-nav-sidebar.js"></script> -->
     <script src="./assets/components/footer.js"></script>
 </head>
 
@@ -37,22 +37,27 @@
         <img src="./assets/images/brand-text-art-2.svg" alt="Brand Logo">
     </div>
 
-    <!-- Single alt-nav-sidebar that stays fixed -->
-    <alt-nav-sidebar title="NAVIGATION" links='[{"href":"https://presenting.august.style/","text":"Home"},
-    {"href":"https://sfagent.august.style/ai-voice-marketing-case-study/research-implementation/writing-guide/notation-cheat-sheet/","text":"Voice Cheat Sheet"},
-    {"href":"https://sfagent.august.style/ai-voice-marketing-case-study/research-implementation/vocal-engineering-strategy-matrix/","text":"Key Voice Variables Matrix"},
-    {"href":"https://sfagent.august.style/ai-voice-marketing-case-study/index-section-site-map/","text":"Strategy Index"},
-    {"href":"#slide1","text":"Introduction"},
-    {"href":"#slide2","text":"Challenges"},
-    {"href":"#slide3","text":"Solutions"},
-    {"href":"#slide4","text":"Creating Urgency"},
-    {"href":"#slide5","text":"Financial Safety"},
-    {"href":"#slide6","text":"Tech Trust"},
-    {"href":"#slide7","text":"Modulation"},
-    {"href":"#slide8","text":"Voice Notation"},
-    {"href":"#slide9","text":"Customer Type"},
-    {"href":"#slide10","text":"Strategy Type"},
-    {"href":"#slide11","text":"What is Possible"}]'></alt-nav-sidebar>
+    <!-- Simple direct navigation sidebar (no component) -->
+    <div class="nav-sidebar">
+        <h3>NAVIGATION</h3>
+        <div class="nav-links">
+            <a href="https://presenting.august.style/" class="nav-link" target="_blank">Home</a>
+            <a href="https://sfagent.august.style/ai-voice-marketing-case-study/research-implementation/writing-guide/notation-cheat-sheet/" class="nav-link" target="_blank">Voice Cheat Sheet</a>
+            <a href="https://sfagent.august.style/ai-voice-marketing-case-study/research-implementation/vocal-engineering-strategy-matrix/" class="nav-link" target="_blank">Key Voice Variables Matrix</a>
+            <a href="https://sfagent.august.style/ai-voice-marketing-case-study/index-section-site-map/" class="nav-link" target="_blank">Strategy Index</a>
+            <a href="#slide1" class="nav-link">Introduction</a>
+            <a href="#slide2" class="nav-link">Challenges</a>
+            <a href="#slide3" class="nav-link">Solutions</a>
+            <a href="#slide4" class="nav-link">Creating Urgency</a>
+            <a href="#slide5" class="nav-link">Financial Safety</a>
+            <a href="#slide6" class="nav-link">Tech Trust</a>
+            <a href="#slide7" class="nav-link">Modulation</a>
+            <a href="#slide8" class="nav-link">Voice Notation</a>
+            <a href="#slide9" class="nav-link">Customer Type</a>
+            <a href="#slide10" class="nav-link">Strategy Type</a>
+            <a href="#slide11" class="nav-link">What is Possible</a>
+        </div>
+    </div>
 
     <!-- Main scrollable container -->
     <div class="scrollable-container" id="slides">
@@ -341,24 +346,29 @@
         <p>SWIPE OR USE KEYBOARD ARROWS</p>
     </div>
 
-    <!-- Mobile navigation -->
+    <!-- Mobile navigation - direct implementation instead of component -->
     <div class="mobile-nav-toggle" id="mobileNavToggle"></div>
     <div class="mobile-nav" id="mobileNav">
-        <alt-nav-sidebar title="NAVIGATION" links='[{"href":"https://presenting.august.style/","text":"Home"},
-        {"href":"https://sfagent.august.style/ai-voice-marketing-case-study/research-implementation/writing-guide/notation-cheat-sheet/","text":"Voice Cheat Sheet"},
-        {"href":"https://sfagent.august.style/ai-voice-marketing-case-study/research-implementation/vocal-engineering-strategy-matrix/","text":"Key Voice Variables Matrix"},
-        {"href":"https://sfagent.august.style/ai-voice-marketing-case-study/index-section-site-map/","text":"Strategy Index"},
-        {"href":"#slide1","text":"Introduction"},
-        {"href":"#slide2","text":"Challenges"},
-        {"href":"#slide3","text":"Solutions"},
-        {"href":"#slide4","text":"Creating Urgency"},
-        {"href":"#slide5","text":"Financial Safety"},
-        {"href":"#slide6","text":"Tech Trust"},
-        {"href":"#slide7","text":"Modulation"},
-        {"href":"#slide8","text":"Voice Notation"},
-        {"href":"#slide9","text":"Customer Type"},
-        {"href":"#slide10","text":"Strategy Type"},
-        {"href":"#slide11","text":"What is Possible"}]'></alt-nav-sidebar>
+        <div class="mobile-nav-content">
+            <h3 class="mobile-nav-title">NAVIGATION</h3>
+            <div class="mobile-nav-links">
+                <a href="https://presenting.august.style/" class="nav-link" target="_blank">Home</a>
+                <a href="https://sfagent.august.style/ai-voice-marketing-case-study/research-implementation/writing-guide/notation-cheat-sheet/" class="nav-link" target="_blank">Voice Cheat Sheet</a>
+                <a href="https://sfagent.august.style/ai-voice-marketing-case-study/research-implementation/vocal-engineering-strategy-matrix/" class="nav-link" target="_blank">Key Voice Variables Matrix</a>
+                <a href="https://sfagent.august.style/ai-voice-marketing-case-study/index-section-site-map/" class="nav-link" target="_blank">Strategy Index</a>
+                <a href="#slide1" class="nav-link">Introduction</a>
+                <a href="#slide2" class="nav-link">Challenges</a>
+                <a href="#slide3" class="nav-link">Solutions</a>
+                <a href="#slide4" class="nav-link">Creating Urgency</a>
+                <a href="#slide5" class="nav-link">Financial Safety</a>
+                <a href="#slide6" class="nav-link">Tech Trust</a>
+                <a href="#slide7" class="nav-link">Modulation</a>
+                <a href="#slide8" class="nav-link">Voice Notation</a>
+                <a href="#slide9" class="nav-link">Customer Type</a>
+                <a href="#slide10" class="nav-link">Strategy Type</a>
+                <a href="#slide11" class="nav-link">What is Possible</a>
+            </div>
+        </div>
     </div>
 
     <!-- Footer -->

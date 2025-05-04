@@ -26,8 +26,8 @@
     <script src="./assets/js/slideshow.js"></script>
     <script src="./assets/js/pixel-animation.js"></script>
 
-    <!-- Component Templates -->
-    <script src="./assets/components/nav-sidebar.js"></script>
+    <!-- Component Templates - REMOVED -->
+    <!-- <script src="./assets/components/nav-sidebar.js"></script> -->
     <script src="./assets/components/footer.js"></script>
 </head>
 
@@ -37,19 +37,24 @@
         <img class="invert-color" src="./assets/images/brand-text-art-1.svg" alt="Brand Logo">
     </div>
 
-    <!-- Single nav-sidebar that stays fixed -->
-    <nav-sidebar title="NAVIGATION" links='[{"href":"https://presenting.august.style/","text":"Home"},
-    {"href":"https://sfagent.august.style/ai-voice-marketing-case-study/research-implementation/writing-guide/notation-cheat-sheet/","text":"Voice Cheat Sheet"},
-    {"href":"https://sfagent.august.style/ai-voice-marketing-case-study/research-implementation/vocal-engineering-strategy-matrix/","text":"Voice Variables Matrix"},
-    {"href":"https://sfagent.august.style/ai-voice-marketing-case-study/index-section-site-map/","text":"Strategy Index"},
-    {"href":"#slide1","text":"Effective AI SDR"},
-    {"href":"#slide2","text":"21% Trust Increase"},
-    {"href":"#slide3","text":"Sound Human?"},
-    {"href":"#slide4","text":"Hey, BLAND AI"},
-    {"href":"#slide5","text":"Creative Needs"},
-    {"href":"#slide6","text":"Claude Army"},
-    {"href":"#slide7","text":"Voice Control"},
-    {"href":"#slide8","text":"Script Generation"}]'></nav-sidebar>
+    <!-- Simple direct navigation sidebar (no component) -->
+    <div class="nav-sidebar">
+        <h3 class="nav-title">NAVIGATION</h3>
+        <div class="nav-links">
+            <a href="https://presenting.august.style/" class="nav-link" target="_blank">Home</a>
+            <a href="https://sfagent.august.style/ai-voice-marketing-case-study/research-implementation/writing-guide/notation-cheat-sheet/" class="nav-link" target="_blank">Voice Cheat Sheet</a>
+            <a href="https://sfagent.august.style/ai-voice-marketing-case-study/research-implementation/vocal-engineering-strategy-matrix/" class="nav-link" target="_blank">Voice Variables Matrix</a>
+            <a href="https://sfagent.august.style/ai-voice-marketing-case-study/index-section-site-map/" class="nav-link" target="_blank">Strategy Index</a>
+            <a href="#slide1" class="nav-link">Effective AI SDR</a>
+            <a href="#slide2" class="nav-link">21% Trust Increase</a>
+            <a href="#slide3" class="nav-link">Sound Human?</a>
+            <a href="#slide4" class="nav-link">Hey, BLAND AI</a>
+            <a href="#slide5" class="nav-link">Creative Needs</a>
+            <a href="#slide6" class="nav-link">Claude Army</a>
+            <a href="#slide7" class="nav-link">Voice Control</a>
+            <a href="#slide8" class="nav-link">Script Generation</a>
+        </div>
+    </div>
 
     <!-- Main scrollable container -->
     <div class="scrollable-container" id="slides">
@@ -253,21 +258,26 @@
         <p>SWIPE OR USE KEYBOARD ARROWS</p>
     </div>
 
-    <!-- Mobile navigation -->
+    <!-- Mobile navigation - direct implementation instead of component -->
     <div class="mobile-nav-toggle" id="mobileNavToggle"></div>
     <div class="mobile-nav" id="mobileNav">
-        <nav-sidebar title="NAVIGATION" links='[{"href":"https://presenting.august.style/","text":"Home"},
-        {"href":"https://sfagent.august.style/ai-voice-marketing-case-study/research-implementation/writing-guide/notation-cheat-sheet/","text":"Voice Cheat Sheet"},
-        {"href":"https://sfagent.august.style/ai-voice-marketing-case-study/research-implementation/vocal-engineering-strategy-matrix/","text":"Voice Variables Matrix"},
-        {"href":"https://sfagent.august.style/ai-voice-marketing-case-study/index-section-site-map/","text":"Strategy Index"},
-        {"href":"#slide1","text":"Effective AI SDR"},
-        {"href":"#slide2","text":"21% Trust Increase"},
-        {"href":"#slide3","text":"Sound Human?"},
-        {"href":"#slide4","text":"Hey, BLAND AI"},
-        {"href":"#slide5","text":"Creative Needs"},
-        {"href":"#slide6","text":"Claude Army"},
-        {"href":"#slide7","text":"Voice Control"},
-        {"href":"#slide8","text":"Script Generation"}]'></nav-sidebar>
+        <div class="mobile-nav-content">
+            <h3 class="mobile-nav-title">NAVIGATION</h3>
+            <div class="mobile-nav-links">
+                <a href="https://presenting.august.style/" class="nav-link" target="_blank">Home</a>
+                <a href="https://sfagent.august.style/ai-voice-marketing-case-study/research-implementation/writing-guide/notation-cheat-sheet/" class="nav-link" target="_blank">Voice Cheat Sheet</a>
+                <a href="https://sfagent.august.style/ai-voice-marketing-case-study/research-implementation/vocal-engineering-strategy-matrix/" class="nav-link" target="_blank">Voice Variables Matrix</a>
+                <a href="https://sfagent.august.style/ai-voice-marketing-case-study/index-section-site-map/" class="nav-link" target="_blank">Strategy Index</a>
+                <a href="#slide1" class="nav-link">Effective AI SDR</a>
+                <a href="#slide2" class="nav-link">21% Trust Increase</a>
+                <a href="#slide3" class="nav-link">Sound Human?</a>
+                <a href="#slide4" class="nav-link">Hey, BLAND AI</a>
+                <a href="#slide5" class="nav-link">Creative Needs</a>
+                <a href="#slide6" class="nav-link">Claude Army</a>
+                <a href="#slide7" class="nav-link">Voice Control</a>
+                <a href="#slide8" class="nav-link">Script Generation</a>
+            </div>
+        </div>
     </div>
 
     <!-- Footer -->
